@@ -6,9 +6,9 @@ function Home() {
   const navigate = useNavigate()
   return (
     <section className="h-screen w-full flex items-center justify-center bg-gradient-to-r from-amber-500 to-pink-500">
-      <div className="text-white flex flex-col items-center gap-8">
-        <h1 className="text-5xl font-bold">Welcome to QuizMaster</h1>
-        <p className="text-xl">
+      <div className="text-white flex flex-col items-center md:gap-8 gap-3">
+        <h1 className="md:text-5xl text-2xl text-center font-bold">Welcome to QuizMaster</h1>
+        <p className="md:text-xl text-base text-center">
           Test your knowledge with our exciting quizzes!
         </p>
         <Button onClick={() => navigate('/quiz')}

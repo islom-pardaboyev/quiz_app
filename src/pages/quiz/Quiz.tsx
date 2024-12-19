@@ -64,8 +64,8 @@ function Quiz() {
           </p>
         </div>
       ) : questions.length > 0 ? (
-        <div className="max-w-[30vw] p-5 rounded-lg bg-white shadow-lg">
-          <h1 className="font-bold text-2xl text-center">QuizMaster</h1>
+        <div className="md:max-w-[30vw] w-[90vw] p-5 rounded-lg bg-white shadow-lg">
+          <h1 className="font-bold md:text-2xl text-lg text-center">QuizMaster</h1>
 
           <div className="w-full h-5 rounded-md mt-3 overflow-hidden bg-gray-200">
             <div
@@ -76,7 +76,7 @@ function Quiz() {
             ></div>
           </div>
 
-          <p className="font-medium text-xl my-4">{currentQuestion.question}</p>
+          <p className="font-medium md:text-xl text-sm my-4">{currentQuestion.question}</p>
 
           <div className="flex flex-col gap-3">
             {options.map((answ, inx) => (
